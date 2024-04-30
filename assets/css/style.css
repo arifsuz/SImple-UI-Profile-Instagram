@@ -1,0 +1,143 @@
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+    margin: 100;
+    padding: 100;
+}
+
+/* Profile */
+.profile-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #f06;
+    padding: 5px;
+    margin: 0;
+}
+
+.profile-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.profile-stats div {
+    margin: 0px 10px;
+    text-align: center;
+}
+
+.profile-stats strong {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+/* Button */
+.profile-actions button {
+    margin: 10px 0px 30px 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #3498db;
+    border-radius: 10%;
+    background-color: transparent;
+    color: #3498db;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Highlight */
+.highlights {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.highlight {
+    background: #7c7c7c;
+    border-radius: 50%;
+    width: 20%;
+    margin-right: 5px;
+}
+
+.highlight:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.highlight-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+/* Space antara Highliht dan Content Post */
+.space {
+    margin: 5%;
+}
+
+/* Content Post */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.post {
+    background: #a0a0a0;
+    position: relative;
+    overflow: hidden;
+    min-width: 30%;
+    max-width: 100%;
+}
+
+.post:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.post-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Dimensi */
+@media (max-width: 350px) {
+    .profile-container {
+        flex-direction: row;
+        align-items: center;
+    }
+    .profile-stats {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .posts {
+        grid-template-columns: 1fr;
+    }
+}
